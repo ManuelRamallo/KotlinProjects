@@ -14,6 +14,6 @@ interface MoviesService {
     suspend fun getAllMovies(@Query("api_key") api_key: String): Response<MoviesList>
 
     @GET("movie/{movie_id}")
-    suspend fun getMovieById(@Query("api_key") api_key: String, @Path("movie_id") movie_id: String): Response<Movie>
+    suspend fun getMovieById(@Query("api_key") api_key: String, @Path("movie_id") movie_id: Int): Response<Movie>
 
 }
