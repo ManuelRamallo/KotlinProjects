@@ -1,9 +1,11 @@
 package com.mramallo.moviesapp.data.network
 
+import android.util.Log
 import com.mramallo.moviesapp.utils.Resource
 import retrofit2.Response
 import timber.log.Timber
 import java.lang.Exception
+import kotlin.math.log
 
 abstract class BaseDataSource {
 
@@ -12,6 +14,7 @@ abstract class BaseDataSource {
             val response = call()
             if(response.isSuccessful) {
                 val body = response.body()
+                Log.d("APIRESULT", "body result -->> $body")
                 if(body != null) return Resource.success(body)
             }
 

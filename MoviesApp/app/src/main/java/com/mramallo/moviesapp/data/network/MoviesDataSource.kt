@@ -2,6 +2,8 @@ package com.mramallo.moviesapp.data.network
 
 import com.mramallo.moviesapp.data.entities.MoviesList
 import com.mramallo.moviesapp.utils.Constants.API_KEY
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 // TODO - ESTA CLASE ES COMO LA DEL SERVICE DEL PROYECTO DE MVVMKOTLINEX (QUOTESERVICE)
@@ -12,7 +14,15 @@ class MoviesDataSource @Inject constructor(private val movieService: MoviesServi
 
 
     // Obtain all popular movies
-    suspend fun getAllMovies() = getResult { movieService.getAllMovies(API_KEY) }
+    //suspend fun getAllMovies() = getResult { movieService.getAllMovies(API_KEY) }
+    // TODO - HACERLO COMO EL PROYECTO PROPIO EN LUGAR DEL GET RESULT..
+    suspend fun getAllMovies(): MoviesList? {
+        return withContext(Dispatchers.IO) {
+            val response = movieService.getAllMovies(API_KEY)
+            response.body()
+        }
+
+    }
 
     // Obtain movie by ID
     suspend fun getMovieById(id: Int) = getResult { movieService.getMovieById(API_KEY, id) }
