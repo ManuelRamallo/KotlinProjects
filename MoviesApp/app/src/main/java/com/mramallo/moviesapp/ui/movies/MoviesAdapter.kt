@@ -13,10 +13,11 @@ import com.mramallo.moviesapp.databinding.ItemMovieBinding
 class MoviesAdapter(private val moviesList: MoviesList, private val onClickListener: (Movie) -> Unit) :
     RecyclerView.Adapter<MoviesAdapter.MovieListViewHolder>() {
 
+    private lateinit var binding: ItemMovieBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return MovieListViewHolder(layoutInflater.inflate(R.layout.item_movie, parent, false))
+        binding = ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MovieListViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
@@ -34,7 +35,7 @@ class MoviesAdapter(private val moviesList: MoviesList, private val onClickListe
             binding.tvTitle.text = movie.title
             binding.tvVoteAverage.text = movie.vote_average.toString()
 
-            Glide.with(binding.ivPosterPath.context).load(movie.poster_path).into(binding.ivPosterPath)
+            Glide.with(binding.ivPosterPath.context).load("https://image.tmdb.org/t/p/original/${movie.poster_path}").into(binding.ivPosterPath)
 
             itemView.setOnClickListener {
                 onClickListener(movie)
