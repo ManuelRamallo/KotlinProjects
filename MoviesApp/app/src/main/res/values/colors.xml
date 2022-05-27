@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#31364D</color>
-    <color name="purple_700">#0F040A</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
@@ -17,5 +17,12 @@
     <color name="movie_red_dark">#601A16</color>
     <color name="movie_red_mid_dark">#AB3F3B</color>
     <color name="movie_red_ligth">#F70113</color>
+
+    <!--  Second Color App  -->
+    <color name="Charcoal">#2f3e46</color>
+    <color name="dark_slate_gray">#354f52</color>
+    <color name="hookers_green">#52796f</color>
+    <color name="dark_sea_green">#84a98c</color>
+    <color name="ash_gray">#CAD2C5</color>
 
 </resources>

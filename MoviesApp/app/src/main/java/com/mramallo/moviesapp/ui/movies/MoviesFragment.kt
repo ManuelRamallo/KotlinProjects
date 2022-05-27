@@ -42,8 +42,7 @@ class MoviesFragment : Fragment() {
      * Method to setup the recycler view of the movie list
      * */
     private fun setupRecyclerViewAndObservers() {
-        val manager = LinearLayoutManager(context)
-        val decoration = DividerItemDecoration(context, manager.orientation)
+        val manager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         binding.rvMovies.layoutManager = manager
         viewModel.moviesList.observe(viewLifecycleOwner, Observer {
@@ -51,8 +50,6 @@ class MoviesFragment : Fragment() {
                 onMovieSelected(movie)
             }
         })
-
-        binding.rvMovies.addItemDecoration(decoration)
     }
 
     fun onMovieSelected(movie: Movie) {
