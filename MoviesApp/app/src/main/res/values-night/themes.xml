@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="RatingBar" parent="Theme.MaterialComponents.DayNight">
+        <item name="ratingBarStyle">@style/Controls.RatingBar</item>
+    </style>
+
+    <style name="Controls.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:isIndicator">true</item>
+    </style>
 </resources>

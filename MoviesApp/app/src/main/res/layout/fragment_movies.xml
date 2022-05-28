@@ -5,16 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.movies.MoviesFragment"
     android:orientation="vertical"
-    android:background="@color/Charcoal"
-    android:paddingStart="20dp">
+    android:background="@color/movie_green_dark"
+    android:paddingStart="30dp">
+
+    <SearchView
+        android:id="@+id/sv_movies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Movie"
+        android:layout_gravity="end"
+        android:searchIcon="@drawable/ic_search"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Movies"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/ash_gray"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/movie_green_light"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="12dp"
@@ -23,5 +33,5 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movies"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"/>
 </LinearLayout>
