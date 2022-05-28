@@ -15,9 +15,8 @@ class MoviesRepository @Inject constructor(private val moviesDataSource: MoviesD
         return moviesDataSource.getAllMovies()
     }
 
-    suspend fun getMovieById(id: Int): Movie {
-        val response = moviesDataSource.getMovieById(id)
-        return response.data!!
+    suspend fun getMovieById(id: Int): Movie? {
+        return moviesDataSource.getMovieById(id)
     }
 
 }

@@ -7,6 +7,7 @@ import javax.inject.Inject
 class GetAllMoviesUseCase @Inject constructor(private val repository: MoviesRepository) {
 
     suspend operator fun invoke(): MoviesList {
+        // TODO - FALTA AÑADIR LOS DATOS PARA QUE LOS COJA POR ROOM
         val movieList = repository.getAllMovies()
 
         // TODO - ESTO DEBERIA RECUPERARLO DE ROOM CUANDO FALLE LA PETICIÓN EN LUGAR DE UN MOCK

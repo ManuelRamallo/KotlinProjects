@@ -1,5 +1,7 @@
 package com.mramallo.moviesapp.data.network
 
+import android.util.Log
+import com.mramallo.moviesapp.data.entities.Movie
 import com.mramallo.moviesapp.data.entities.MoviesList
 import com.mramallo.moviesapp.utils.Constants.API_KEY
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +17,6 @@ class MoviesDataSource @Inject constructor(private val movieService: MoviesServi
 
     // Obtain all popular movies
     //suspend fun getAllMovies() = getResult { movieService.getAllMovies(API_KEY) }
-    // TODO - HACERLO COMO EL PROYECTO PROPIO EN LUGAR DEL GET RESULT..
     suspend fun getAllMovies(): MoviesList? {
         return withContext(Dispatchers.IO) {
             val response = movieService.getAllMovies(API_KEY)
@@ -25,7 +26,12 @@ class MoviesDataSource @Inject constructor(private val movieService: MoviesServi
     }
 
     // Obtain movie by ID
-    suspend fun getMovieById(id: Int) = getResult { movieService.getMovieById(API_KEY, id) }
+    suspend fun getMovieById(id: Int): Movie? {
+        return withContext(Dispatchers.IO) {
+            val response = movieService.getMovieById(id, API_KEY)
+            response.body()
+        }
+    }
 
 
 }
