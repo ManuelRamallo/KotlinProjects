@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mramallo.moviesapp.data.entities.Movie
+import com.mramallo.moviesapp.data.entities.MovieDetail
 import com.mramallo.moviesapp.domain.GetMovieByIdUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -14,7 +15,7 @@ class MovieDetailViewModel @Inject constructor(
     private val getMovieByIdUseCase: GetMovieByIdUseCase
 ): ViewModel() {
 
-    val movie = MutableLiveData<Movie?>()
+    val movie = MutableLiveData<MovieDetail?>()
 
     fun onCreate(id_movie: Int){
         viewModelScope.launch {

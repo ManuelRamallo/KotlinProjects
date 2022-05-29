@@ -58,8 +58,7 @@ class MoviesFragment : Fragment() {
         })
     }
 
-    fun onMovieSelected(id_movie: Int) {
-        Toast.makeText(context, id_movie.toString(), Toast.LENGTH_LONG).show()
+    private fun onMovieSelected(id_movie: Int) {
         findNavController().navigate(
             R.id.action_moviesFragment_to_movieDetailFragment,
             bundleOf("id_movie" to id_movie)

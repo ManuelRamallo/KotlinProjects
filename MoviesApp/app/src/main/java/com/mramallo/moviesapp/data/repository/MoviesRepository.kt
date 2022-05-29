@@ -1,6 +1,7 @@
 package com.mramallo.moviesapp.data.repository
 
 import com.mramallo.moviesapp.data.entities.Movie
+import com.mramallo.moviesapp.data.entities.MovieDetail
 import com.mramallo.moviesapp.data.entities.MoviesList
 import com.mramallo.moviesapp.data.network.MoviesDataSource
 import javax.inject.Inject
@@ -15,7 +16,7 @@ class MoviesRepository @Inject constructor(private val moviesDataSource: MoviesD
         return moviesDataSource.getAllMovies()
     }
 
-    suspend fun getMovieById(id: Int): Movie? {
+    suspend fun getMovieById(id: Int): MovieDetail? {
         return moviesDataSource.getMovieById(id)
     }
 

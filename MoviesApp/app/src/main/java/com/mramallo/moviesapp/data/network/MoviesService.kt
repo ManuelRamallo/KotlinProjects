@@ -1,6 +1,7 @@
 package com.mramallo.moviesapp.data.network
 
 import com.mramallo.moviesapp.data.entities.Movie
+import com.mramallo.moviesapp.data.entities.MovieDetail
 import com.mramallo.moviesapp.data.entities.MoviesList
 import retrofit2.Response
 import retrofit2.http.GET
@@ -14,6 +15,6 @@ interface MoviesService {
     suspend fun getAllMovies(@Query("api_key") api_key: String): Response<MoviesList>
 
     @GET("movie/{movie_id}")
-    suspend fun getMovieById(@Path("movie_id") movie_id: Int, @Query("api_key") api_key: String): Response<Movie>
+    suspend fun getMovieById(@Path("movie_id") movie_id: Int, @Query("api_key") api_key: String): Response<MovieDetail>
 
 }

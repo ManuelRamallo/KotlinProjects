@@ -2,6 +2,7 @@ package com.mramallo.moviesapp.data.network
 
 import android.util.Log
 import com.mramallo.moviesapp.data.entities.Movie
+import com.mramallo.moviesapp.data.entities.MovieDetail
 import com.mramallo.moviesapp.data.entities.MoviesList
 import com.mramallo.moviesapp.utils.Constants.API_KEY
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +27,7 @@ class MoviesDataSource @Inject constructor(private val movieService: MoviesServi
     }
 
     // Obtain movie by ID
-    suspend fun getMovieById(id: Int): Movie? {
+    suspend fun getMovieById(id: Int): MovieDetail? {
         return withContext(Dispatchers.IO) {
             val response = movieService.getMovieById(id, API_KEY)
             response.body()

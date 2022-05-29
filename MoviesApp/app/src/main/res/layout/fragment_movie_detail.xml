@@ -1,12 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.movieDetail.MovieDetailFragment">
 
-    <TextView
+
+
+    <ImageView
+        android:id="@+id/iv_background_movie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        android:src="@drawable/ic_back" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="-30dp"
+        android:background="@drawable/movie_detail_info"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="20/05/2022"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/movie_green_mid_light"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="PELICULA"
+            android:layout_marginBottom="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/movie_green_light"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/rb_vote_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/RatingBarMovieDetail" />
+
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/movie_green_mid_light"
+                android:textSize="16sp"
+                android:paddingTop="8dp"
+                android:gravity="end"
+                tools:text="3h 30min" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="12sp">
+
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/movie_green_light"
+                tools:text="lkajsflasjflajslfjsafljsajlfasjf
+                        alsjdflaskfjlasjflajf
+                        alskdjfalsjfalsfjlsajflasfjasljf"/>
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+
+    <!--<TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +121,20 @@
         android:id="@+id/tv_vote_count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello" />
+        android:text="Hello" />-->
 
-</LinearLayout>
+    <!--<View
+        android:id="@+id/rectangle_1"
+        android:layout_width="360dp"
+        android:layout_height="511dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="435dp"
+        android:background="@drawable/rectangle_1"
+        />-->
+
+
+
+
+</FrameLayout>
+

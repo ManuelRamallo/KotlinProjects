@@ -21,4 +21,13 @@
     <style name="Controls.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
         <item name="android:isIndicator">true</item>
     </style>
+
+    <style name="RatingBarMovieDetail" parent="Theme.MaterialComponents.DayNight">
+        <item name="ratingBarStyle">@style/Controls.RatingBarMovieDetail</item>
+    </style>
+
+    <style name="Controls.RatingBarMovieDetail" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:isIndicator">true</item>
+    </style>
+
 </resources>
