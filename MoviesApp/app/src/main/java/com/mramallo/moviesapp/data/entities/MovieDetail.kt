@@ -2,7 +2,7 @@ package com.mramallo.moviesapp.data.entities
 
 import androidx.room.Entity
 
-@Entity(tableName = "movieDetail")
+@Entity(tableName = "movieDetail_table")
 data class MovieDetail(
     val adult: Boolean,
     val backdrop_path: String?,

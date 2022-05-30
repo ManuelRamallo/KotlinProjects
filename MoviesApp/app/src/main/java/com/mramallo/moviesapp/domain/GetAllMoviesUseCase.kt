@@ -10,7 +10,6 @@ class GetAllMoviesUseCase @Inject constructor(private val repository: MoviesRepo
         // TODO - FALTA AÑADIR LOS DATOS PARA QUE LOS COJA POR ROOM
         val movieList = repository.getAllMovies()
 
-        // TODO - ESTO DEBERIA RECUPERARLO DE ROOM CUANDO FALLE LA PETICIÓN EN LUGAR DE UN MOCK
         return movieList ?:
         MoviesList(1, listOf(), 1, 1)
     }

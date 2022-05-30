@@ -15,11 +15,10 @@ class MoviesViewModel @Inject constructor(
 ): ViewModel() {
 
     val moviesList = MutableLiveData<MoviesList>()
-    // TODO - Hay que añadir un loading mientras cargan las peliculas
-
+    
     fun onCreate(){
         viewModelScope.launch {
-            // TODO - Aquí faltaría el loading
+            // TODO - FALTA AÑADIR EL LOADING
             // This is not a error, is only a bug to android studio
             moviesList.postValue(getAllMoviesUseCase())
         }
