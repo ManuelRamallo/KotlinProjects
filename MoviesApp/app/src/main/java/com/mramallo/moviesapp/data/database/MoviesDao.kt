@@ -13,10 +13,10 @@ import com.mramallo.moviesapp.data.entities.MoviesList
 interface MoviesDao {
 
     @Query("SELECT * FROM movies_table")
-    suspend fun getAllMovies(): LiveData<MoviesList?>
+    suspend fun getAllMovies(): MoviesList?
 
     @Query("SELECT * FROM movieDetail_table WHERE id = :id")
-    suspend fun getMovieById(id: Int): LiveData<MovieDetail?>
+    suspend fun getMovieById(id: Int): MovieDetail?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(moviesList: MoviesList)

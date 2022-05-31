@@ -9,28 +9,7 @@ class GetMovieByIdUseCase @Inject constructor(private val repository: MoviesRepo
         // TODO - FALTA AÑADIR LOS DATOS PARA QUE LOS COJA POR ROOM
         val movie = repository.getMovieById(id)
 
-        return movie ?: MovieDetail(
-            false,
-        "backdrop_path_mock",
-        1,
-        "homepage_mock",
-        "original_lenguage_mock",
-        "original_title_mock",
-        "overview_mock",
-        1,
-        "poster_path_mock",
-        -1,
-        "imbd_id_mock",
-        "release_date_mock",
-        1,
-        1,
-        "status_mock",
-        "title_mock",
-        "tagline_mock",
-        1,
-        false,
-        1
-        )
+        return null
     }
 
 }
