@@ -1,9 +1,7 @@
 package com.mramallo.moviesapp.data.network
 
-import android.util.Log
-import com.mramallo.moviesapp.data.entities.Movie
-import com.mramallo.moviesapp.data.entities.MovieDetail
-import com.mramallo.moviesapp.data.entities.MoviesList
+import com.mramallo.moviesapp.domain.model.MovieDetail
+import com.mramallo.moviesapp.domain.model.MoviesList
 import com.mramallo.moviesapp.utils.Constants.API_KEY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

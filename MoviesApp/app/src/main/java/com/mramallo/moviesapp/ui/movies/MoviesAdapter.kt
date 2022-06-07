@@ -5,9 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mramallo.moviesapp.R
-import com.mramallo.moviesapp.data.entities.Movie
-import com.mramallo.moviesapp.data.entities.MoviesList
+import com.mramallo.moviesapp.domain.model.Movie
+import com.mramallo.moviesapp.domain.model.MoviesList
 import com.mramallo.moviesapp.databinding.ItemMovieBinding
 
 class MoviesAdapter(private val moviesList: MoviesList, private val onClickListener: (Movie) -> Unit) :

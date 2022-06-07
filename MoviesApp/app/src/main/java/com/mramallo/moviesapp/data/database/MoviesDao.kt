@@ -1,34 +1,35 @@
 package com.mramallo.moviesapp.data.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.mramallo.moviesapp.data.entities.MovieDetail
-import com.mramallo.moviesapp.data.entities.MoviesList
+import com.mramallo.moviesapp.data.entities.MovieDetailEntity
+import com.mramallo.moviesapp.data.entities.MoviesListEntity
+import com.mramallo.moviesapp.domain.model.MovieDetail
+import com.mramallo.moviesapp.domain.model.MoviesList
 
 
 @Dao
 interface MoviesDao {
 
-    @Query("SELECT * FROM movies_table")
-    suspend fun getAllMovies(): MoviesList?
+    @Query("SELECT * FROM movies_list_table")
+    suspend fun getAllMovies(): MoviesListEntity?
 
-    @Query("SELECT * FROM movieDetail_table WHERE id = :id")
-    suspend fun getMovieById(id: Int): MovieDetail?
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(moviesList: MoviesList)
+    @Query("SELECT * FROM movie_detail_table WHERE id = :id")
+    suspend fun getMovieById(id: Int): MovieDetailEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovie(movieDetail: MovieDetail)
+    suspend fun insertAll(moviesList: MoviesListEntity)
 
-    @Query("DELETE FROM movies_table")
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMovie(movieDetail: MovieDetailEntity)
+
+    @Query("DELETE FROM movies_list_table")
     suspend fun deleteAllMovies()
 
     // TODO - Ver esto porque creo que quizas no haga falta
-    @Query("DELETE FROM movieDetail_table")
+    @Query("DELETE FROM movie_detail_table")
     suspend fun deleteMovie()
 
 

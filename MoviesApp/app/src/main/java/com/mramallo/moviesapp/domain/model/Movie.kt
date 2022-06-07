@@ -1,9 +1,7 @@
-package com.mramallo.moviesapp.data.entities
+package com.mramallo.moviesapp.domain.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.mramallo.moviesapp.data.entities.MovieEntity
 
-@Entity(tableName = "movies_table")
 data class Movie(
     val poster_path: String?,
     val adult: Boolean,
@@ -20,3 +18,5 @@ data class Movie(
     val video: Boolean,
     val vote_average: Number
 )
+
+fun MovieEntity.toDomain() = Movie(poster_path, adult, overview, release_date, genre_ids, id, original_title, original_language, title, backdrop_path, popularity, vote_count, video, vote_average)

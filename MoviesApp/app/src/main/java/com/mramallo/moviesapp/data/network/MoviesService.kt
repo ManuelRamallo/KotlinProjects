@@ -1,8 +1,7 @@
 package com.mramallo.moviesapp.data.network
 
-import com.mramallo.moviesapp.data.entities.Movie
-import com.mramallo.moviesapp.data.entities.MovieDetail
-import com.mramallo.moviesapp.data.entities.MoviesList
+import com.mramallo.moviesapp.domain.model.MovieDetail
+import com.mramallo.moviesapp.domain.model.MoviesList
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -1,16 +1,13 @@
 package com.mramallo.moviesapp.data.repository
 
-import androidx.lifecycle.LiveData
 import com.mramallo.moviesapp.data.database.MoviesDao
-import com.mramallo.moviesapp.data.entities.Movie
-import com.mramallo.moviesapp.data.entities.MovieDetail
-import com.mramallo.moviesapp.data.entities.MoviesList
+import com.mramallo.moviesapp.data.entities.MovieDetailEntity
+import com.mramallo.moviesapp.data.entities.MoviesListEntity
+import com.mramallo.moviesapp.domain.model.MovieDetail
+import com.mramallo.moviesapp.domain.model.MoviesList
 import com.mramallo.moviesapp.data.network.MoviesDataSource
 import javax.inject.Inject
 
-
-// TODO - DE AQUÍ VA A LOS CASOS DE USO ( EN LA APP DE RICK Y MORTY VA AL VIEW MODEL DEL TIRON )
-// TODO - AQUÍ EN ESTE CASO VAMOS A HACER LOS CASOS DE USO Y ESO
 class MoviesRepository @Inject constructor(
     private val moviesDataSource: MoviesDataSource,
     private val moviesDao: MoviesDao
@@ -26,16 +23,20 @@ class MoviesRepository @Inject constructor(
     }
 
     // To DataBase Room
-    suspend fun getAllMoviesFromDDBB(): MoviesList? {
+    suspend fun getAllMoviesFromDDBB(): MoviesListEntity? {
         return moviesDao.getAllMovies()
     }
 
-    suspend fun insertAllMoviesToDDBB(moviesList: MoviesList) {
+    suspend fun insertAllMoviesToDDBB(moviesList: MoviesListEntity) {
         moviesDao.insertAll(moviesList)
     }
 
-    suspend fun insertMovieToDDBB(movieDetail: MovieDetail) {
+    suspend fun insertMovieToDDBB(movieDetail: MovieDetailEntity) {
         moviesDao.insertMovie(movieDetail)
+    }
+
+    suspend fun getMovieByIdToDDBB(id: Int): MovieDetailEntity? {
+        return moviesDao.getMovieById(id)
     }
 
     suspend fun deleteMovieToDDBB() {
