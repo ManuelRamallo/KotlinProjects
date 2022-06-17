@@ -40,7 +40,9 @@ class GetMovieByIdUseCaseTest {
         assert(movieDetail == response)
     }
 
-   /* @Test
-    fun `when database is not empty then return quote`*/
+    @Test
+    fun `when database is not empty then return quote`() {
+        
+    }
 
 }
