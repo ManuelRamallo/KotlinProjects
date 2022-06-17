@@ -18,7 +18,7 @@
         <item name="ratingBarStyle">@style/Controls.RatingBar</item>
     </style>
 
-    <style name="Controls.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+    <style name="Controls.RatingBar" parent="Widget.AppCompat.RatingBar.Indicator">
         <item name="android:isIndicator">true</item>
     </style>
 
@@ -28,6 +28,16 @@
 
     <style name="Controls.RatingBarMovieDetail" parent="Widget.AppCompat.RatingBar.Indicator">
         <item name="android:isIndicator">true</item>
+    </style>
+
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <!-- Query Text Color -->
+        <item name="android:textColorPrimary">@color/movie_green_light</item>
+        <!-- Hint Color -->
+        <item name="android:textColorHint">@color/movie_green_light</item>
+        <!-- Icon Color -->
+        <item name="android:tint">@color/movie_green_light</item>
     </style>
 
 </resources>

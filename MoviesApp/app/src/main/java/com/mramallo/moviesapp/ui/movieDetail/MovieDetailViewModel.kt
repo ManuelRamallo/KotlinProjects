@@ -18,7 +18,6 @@ class MovieDetailViewModel @Inject constructor(
 
     fun onCreate(id_movie: Int){
         viewModelScope.launch {
-            // TODO - FALTA AÑADIR EL LOADING
             movie.postValue(getMovieByIdUseCase(id_movie))
         }
     }

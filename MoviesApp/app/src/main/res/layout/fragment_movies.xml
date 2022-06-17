@@ -16,6 +16,20 @@
         android:layout_gravity="center"
         />
 
+    <TextView
+        android:id="@+id/tv_empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Por favor busque de nuevo una pelicula"
+        android:visibility="gone"
+        android:paddingEnd="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/movie_green_light"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +41,7 @@
             android:layout_height="wrap_content"
             android:queryHint="Search Movie"
             android:layout_gravity="end"
-            android:searchIcon="@drawable/ic_search"
+            android:theme="@style/AppSearchView"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             />
@@ -38,7 +52,7 @@
             android:text="@string/title_fragment_movies"
             android:layout_marginTop="10dp"
             android:textColor="@color/movie_green_light"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:layout_marginBottom="12dp"
             />
@@ -48,6 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+
+
 
     </LinearLayout>
 

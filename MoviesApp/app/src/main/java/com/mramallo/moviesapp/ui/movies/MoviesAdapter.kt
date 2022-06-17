@@ -9,7 +9,7 @@ import com.mramallo.moviesapp.domain.model.Movie
 import com.mramallo.moviesapp.domain.model.MoviesList
 import com.mramallo.moviesapp.databinding.ItemMovieBinding
 
-class MoviesAdapter(private val moviesList: MoviesList, private val onClickListener: (Movie) -> Unit) :
+class MoviesAdapter(private val moviesList: List<Movie>, private val onClickListener: (Movie) -> Unit) :
     RecyclerView.Adapter<MoviesAdapter.MovieListViewHolder>() {
 
     private lateinit var binding: ItemMovieBinding
@@ -20,11 +20,11 @@ class MoviesAdapter(private val moviesList: MoviesList, private val onClickListe
     }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
-        val item = moviesList.results[position]
+        val item = moviesList[position]
         holder.render(item, onClickListener)
     }
 
-    override fun getItemCount(): Int = moviesList.total_results
+    override fun getItemCount(): Int = moviesList.size
 
 
     class MovieListViewHolder(view: View): RecyclerView.ViewHolder(view) {

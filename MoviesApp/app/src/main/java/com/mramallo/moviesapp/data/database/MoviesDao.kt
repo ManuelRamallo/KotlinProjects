@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.mramallo.moviesapp.data.entities.MovieDetailEntity
+import com.mramallo.moviesapp.data.entities.MovieEntity
 import com.mramallo.moviesapp.data.entities.MoviesListEntity
 import com.mramallo.moviesapp.domain.model.MovieDetail
 import com.mramallo.moviesapp.domain.model.MoviesList
@@ -20,7 +21,7 @@ interface MoviesDao {
     suspend fun getMovieById(id: Int): MovieDetailEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(moviesList: MoviesListEntity)
+    suspend fun insertAll(moviesList: List<MovieEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMovie(movieDetail: MovieDetailEntity)
@@ -28,7 +29,6 @@ interface MoviesDao {
     @Query("DELETE FROM movies_list_table")
     suspend fun deleteAllMovies()
 
-    // TODO - Ver esto porque creo que quizas no haga falta
     @Query("DELETE FROM movie_detail_table")
     suspend fun deleteMovie()
 

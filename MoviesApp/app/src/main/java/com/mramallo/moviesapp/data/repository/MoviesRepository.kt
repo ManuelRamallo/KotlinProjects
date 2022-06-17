@@ -2,10 +2,12 @@ package com.mramallo.moviesapp.data.repository
 
 import com.mramallo.moviesapp.data.database.MoviesDao
 import com.mramallo.moviesapp.data.entities.MovieDetailEntity
+import com.mramallo.moviesapp.data.entities.MovieEntity
 import com.mramallo.moviesapp.data.entities.MoviesListEntity
 import com.mramallo.moviesapp.domain.model.MovieDetail
 import com.mramallo.moviesapp.domain.model.MoviesList
 import com.mramallo.moviesapp.data.network.MoviesDataSource
+import com.mramallo.moviesapp.domain.model.Movie
 import javax.inject.Inject
 
 class MoviesRepository @Inject constructor(
@@ -14,7 +16,7 @@ class MoviesRepository @Inject constructor(
     ) {
 
     // To API
-    suspend fun getAllMovies(): MoviesList? {
+    suspend fun getAllMovies(): List<Movie>? {
         return moviesDataSource.getAllMovies()
     }
 
@@ -27,7 +29,7 @@ class MoviesRepository @Inject constructor(
         return moviesDao.getAllMovies()
     }
 
-    suspend fun insertAllMoviesToDDBB(moviesList: MoviesListEntity) {
+    suspend fun insertAllMoviesToDDBB(moviesList: List<MovieEntity>) {
         moviesDao.insertAll(moviesList)
     }
 
