@@ -1,5 +1,6 @@
 package com.mramallo.moviesapp.ui.movieDetail
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,6 +18,7 @@ class MovieDetailViewModel @Inject constructor(
     val movie = MutableLiveData<MovieDetail?>()
 
     fun onCreate(id_movie: Int){
+        Log.d("SEARCH", "ID MOVIE: $id_movie")
         viewModelScope.launch {
             movie.postValue(getMovieByIdUseCase(id_movie))
         }
