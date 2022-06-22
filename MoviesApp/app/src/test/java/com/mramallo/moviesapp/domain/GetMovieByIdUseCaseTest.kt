@@ -1,11 +1,13 @@
 package com.mramallo.moviesapp.domain
 
+import com.mramallo.moviesapp.data.entities.MovieDetailEntity
 import com.mramallo.moviesapp.data.entities.toDataBase
 import com.mramallo.moviesapp.data.repository.MoviesRepository
 import com.mramallo.moviesapp.domain.model.MovieDetail
 import com.mramallo.moviesapp.domain.model.toDomain
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -41,8 +43,16 @@ class GetMovieByIdUseCaseTest {
     }
 
     @Test
-    fun `when database is not empty then return quote`() {
-        
+    fun `when api return null then database return something`() = runBlocking {
+        // Given
+        coEvery { moviesRepository.getMovieById(1) } returns null
+
+        // When
+        getMovieByIdUseCase(1)
+
+        // Then
+        coVerify(exactly = 1){ moviesRepository.getMovieByIdToDDBB(1) }
+
     }
 
 }
