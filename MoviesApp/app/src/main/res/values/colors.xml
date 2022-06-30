@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--  Main Color App  -->
+    <!--<color name="movie_black_dark">#0F040A</color>
+    <color name="movie_blue_dark">#31364D</color>
+    <color name="movie_grey_dark">#595A62</color>
+    <color name="movie_grey_mid_dark">#68758F</color>
+    <color name="movie_grey_ligth">#B0B3B9</color>
+    <color name="movie_red_dark">#601A16</color>
+    <color name="movie_red_mid_dark">#AB3F3B</color>
+    <color name="movie_red_ligth">#F70113</color>-->
+
+    <!--  Second Color App  -->
+    <color name="movie_green_dark">#2f3e46</color>
+    <color name="movie_green_mid_dark">#354f52</color>
+    <color name="movie_green">#52796f</color>
+    <color name="movie_green_mid_light">#84a98c</color>
+    <color name="movie_green_light">#CAD2C5</color>
+
+</resources>
